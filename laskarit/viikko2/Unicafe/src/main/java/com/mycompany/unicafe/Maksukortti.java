@@ -16,6 +16,7 @@ public class Maksukortti {
     public void lataaRahaa(int lisays) {
         this.saldo += lisays;
     }
+    
  
     public boolean otaRahaa(int maara) {
         if (this.saldo < maara) {
