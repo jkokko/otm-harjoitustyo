@@ -115,5 +115,4 @@ public class MaksukorttiTest {
         
         assertEquals("Kortilla on rahaa 0.0 euroa", testikortti.toString());
     }
-    //testi ei mene läpi koska syoMaukkaasti() metodissa on virhe
 }
