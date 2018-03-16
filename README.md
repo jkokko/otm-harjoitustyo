@@ -3,4 +3,8 @@
 * *Kokeillaan italic fonttia*
 * **Kokeillaan boldata**
 
->Jokainen tsäänssi on mahdollisuus
+## Viikon yksi tehtäviä:
+
+https://github.com/jkokko/otm-harjoitustyo/blob/master/laskarit/viikko1/gitlog.txt
+
+https://github.com/jkokko/otm-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt
