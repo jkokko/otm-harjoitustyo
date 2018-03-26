@@ -7,7 +7,8 @@ Kyseessä on desktop-sovelluksena toteutettu Sudokupeli. Ohjelma generoi satunna
 On vain yhdenlainen käyttäjä, eli tavallinen pelaaja, jolla on oma tallennettu tunnus. Ennen pelaamistaan pelaaja tekee uuden käyttäjätunnuksen ellei hänellä sellaista ole, tai sitte kirjautuun omaan vanhaan tunnukseensa. Sovellus pitää kirjaa käyttäjän parhaimmista ajoista.
 
 ## Käyttöliittymäluonnos
-Sovelluksen käynnistyessä
+![kayttoliittymaluonnos]
+https://github.com/jkokko/otm-harjoitustyo/blob/master/dokumentointi/kayttoliittymahahmotelma.png
 
 
 ## Toiminnallisuus
