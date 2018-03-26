@@ -8,3 +8,9 @@
 https://github.com/jkokko/otm-harjoitustyo/blob/master/laskarit/viikko1/gitlog.txt
 
 https://github.com/jkokko/otm-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt
+
+## Työaikakirjanpito
+https://github.com/jkokko/otm-harjoitustyo/blob/master/dokumentointi/tyoaikakirjanpito.md
+
+## Vaatimusmäärittely
+https://github.com/jkokko/otm-harjoitustyo/blob/master/dokumentointi/Vaatimusmaarittely.md
