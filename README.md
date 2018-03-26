@@ -10,4 +10,4 @@ https://github.com/jkokko/otm-harjoitustyo/blob/master/laskarit/viikko1/gitlog.t
 https://github.com/jkokko/otm-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt
 
 ## Työaikakirjanpito
-https://github.com/jkokko/otm-harjoitustyo/blob/master/tyoaikakirjanpito
+https://github.com/jkokko/otm-harjoitustyo/blob/master/tyoaikakirjanpito.md
