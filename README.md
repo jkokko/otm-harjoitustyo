@@ -3,11 +3,13 @@
 * *Kokeillaan italic fonttia*
 * **Kokeillaan boldata**
 
-## Viikon yksi tehtäviä:
+## Viikon kaksi tehtäviä:
 
-https://github.com/jkokko/otm-harjoitustyo/blob/master/laskarit/viikko1/gitlog.txt
+https://github.com/jkokko/otm-harjoitustyo/blob/master/laskarit/viikko2/
 
-https://github.com/jkokko/otm-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt
+## Viikon kolme tehtaviä:
+
+https://github.com/jkokko/otm-harjoitustyo/blob/master/laskarit/viikko3/
 
 ## Työaikakirjanpito
 https://github.com/jkokko/otm-harjoitustyo/blob/master/dokumentointi/tyoaikakirjanpito.md
