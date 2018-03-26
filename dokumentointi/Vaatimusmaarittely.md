@@ -8,7 +8,7 @@ On vain yhdenlainen käyttäjä, eli tavallinen pelaaja, jolla on oma tallennett
 
 ## Käyttöliittymäluonnos
 ![kayttoliittymaluonnos]
-https://github.com/jkokko/otm-harjoitustyo/blob/master/dokumentointi/kayttoliittymahahmotelma.png
+(https://github.com/jkokko/otm-harjoitustyo/blob/master/dokumentointi/kayttoliittymahahmotelma.png)
 
 
 ## Toiminnallisuus
