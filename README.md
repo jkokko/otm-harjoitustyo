@@ -1,7 +1,4 @@
 # README TIEDOSTO
-## Markdown harjoittelua
-* *Kokeillaan italic fonttia*
-* **Kokeillaan boldata**
 
 ## Viikon kaksi tehtäviä:
 
