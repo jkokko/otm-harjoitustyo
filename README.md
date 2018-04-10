@@ -1,12 +1,10 @@
-# README TIEDOSTO
+# Sudoku
 
-## Viikon kaksi tehtäviä:
+Tässä vaiheessa sovellus luo sudokutehtävän, jolla on yksi uniikki ratkaisu. Annettujen numeroiden määrä on vielä satunnainen, ja vaatii hiomista.
 
-https://github.com/jkokko/otm-harjoitustyo/blob/master/laskarit/viikko2/
+Sudokuun voi täyttää numeroita numeronäppäimien avulla, ja backspacella voi poistaa numeron. Check nappula toimii, ja kertoo tekstinä onko annettu ratkaisu oikein.
 
-## Viikon kolme tehtaviä:
-
-https://github.com/jkokko/otm-harjoitustyo/blob/master/laskarit/viikko3/
+Käyttäjiin liittyvää koodia ei vielä ole, ja koodi on muutenkin vielä vaikealukuista.
 
 ## Työaikakirjanpito
 https://github.com/jkokko/otm-harjoitustyo/blob/master/dokumentointi/tyoaikakirjanpito.md

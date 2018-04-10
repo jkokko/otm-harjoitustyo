@@ -6,13 +6,15 @@ import javafx.scene.control.Button;
 public class NumberButton extends Button {
     
     private boolean givenCellValue;
+    private int value;
 
     public NumberButton(Integer value) {
         givenCellValue = false;
-        insertValue(value.toString());
+        this.value = value;
+        insertValueAsButtonText(value.toString());
     }
 
-    public void insertValue(String value) {
+    public void insertValueAsButtonText(String value) {
         int valueAsInt = Integer.parseInt(value);
         if (getGivenCellValue() == true) {
             return;
@@ -21,14 +23,21 @@ public class NumberButton extends Button {
             return;
         } else {
             setText(value);
+            this.value = valueAsInt;
         }
     }
 
+    public int getValue() {
+        return value;
+    }
+    
     public void setGivenCellValueTrue() {
         this.givenCellValue = true;
     }
     
     public boolean getGivenCellValue() {
         return this.givenCellValue;
-    } 
+    }
+    
+    
 }
