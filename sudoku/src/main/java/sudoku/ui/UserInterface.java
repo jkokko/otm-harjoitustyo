@@ -1,6 +1,7 @@
 
 package sudoku.ui;
 
+import javafx.animation.AnimationTimer;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -8,15 +9,13 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import sudoku.domain.Solver;
 
 
 public class UserInterface {
     
     public static Stage getSudoku() {
         Stage stage = new Stage();
-        BorderPane ikkuna = new BorderPane();
-        Solver solver = new Solver();
+        BorderPane window = new BorderPane();
         GridPane sudokuGrid = SudokuGrid.createPuzzle();
         VBox vboxi = new VBox();
         
@@ -30,19 +29,21 @@ public class UserInterface {
         Button check = CheckButton.getCheckButton(sudokuGrid);
         
         //Timer
-        Timer timer = new Timer();
-        Label time = new Label(Double.toString(timer.getTime()));
+        Label timeLabel = new Label();
+        AnimationTimer timeUpdater = Timer.timeUpdater(timeLabel);
         
-        vboxi.getChildren().add(time);
+        
+        vboxi.getChildren().add(timeLabel);
         vboxi.getChildren().add(clear);
         vboxi.getChildren().add(check);
-        ikkuna.setRight(vboxi);
-        ikkuna.setLeft(sudokuGrid);
+        
+        window.setLeft(sudokuGrid);
+        window.setRight(vboxi);
 
-        Scene scene = new Scene(ikkuna);
-        stage.setScene(scene);
+        Scene scene = new Scene(window);
         stage.setTitle("Sudoku");
         stage.setScene(scene);
+        timeUpdater.start();
         return stage;
     }
     
