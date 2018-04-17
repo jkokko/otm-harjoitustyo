@@ -7,6 +7,8 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 
 public class NewPuzzleButton extends Button {
+    
+    //vaatii vielä toiminnallisuuden, että kello nollataan
 
     public NewPuzzleButton(BorderPane window, CheckButton check, ClearButton clear) {
         setText("New Puzzle");

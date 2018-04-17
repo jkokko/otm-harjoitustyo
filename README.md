@@ -7,6 +7,6 @@ Sudokuun voi täyttää numeroita numeronäppäimien avulla, ja backspacella voi
 Käyttäjiin liittyvää koodia ei vielä ole. Ainoastaan tyhjiä luokkia.
 
 ## Dokumentaatio
-[Työaikakirjanpito]https://github.com/jkokko/otm-harjoitustyo/blob/master/dokumentointi/tyoaikakirjanpito.md
+[Työaikakirjanpito](https://github.com/jkokko/otm-harjoitustyo/blob/master/dokumentointi/tyoaikakirjanpito.md)
 
-[Vaatimusmäärittely]https://github.com/jkokko/otm-harjoitustyo/blob/master/dokumentointi/Vaatimusmaarittely.md
+[Vaatimusmäärittely](https://github.com/jkokko/otm-harjoitustyo/blob/master/dokumentointi/Vaatimusmaarittely.md)
