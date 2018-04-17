@@ -19,14 +19,15 @@ public class UserInterface {
         GridPane sudokuGrid = SudokuGrid.createPuzzle();
         VBox vboxi = new VBox();
         
-        //new game button
-        Button newGame = new Button("New Game");
         
         //clear button
-        Button clear = ClearButton.getClearButton(sudokuGrid);
+        ClearButton clearButton = new ClearButton(sudokuGrid);
         
         //check button
-        Button check = CheckButton.getCheckButton(sudokuGrid);
+        CheckButton checkButton = new CheckButton(sudokuGrid);
+        
+        //new game button
+        NewPuzzleButton newPuzzleButton = new NewPuzzleButton(window, checkButton, clearButton);
         
         //Timer
         Label timeLabel = new Label();
@@ -34,8 +35,9 @@ public class UserInterface {
         
         
         vboxi.getChildren().add(timeLabel);
-        vboxi.getChildren().add(clear);
-        vboxi.getChildren().add(check);
+        vboxi.getChildren().add(clearButton);
+        vboxi.getChildren().add(checkButton);
+        vboxi.getChildren().add(newPuzzleButton);
         
         window.setLeft(sudokuGrid);
         window.setRight(vboxi);

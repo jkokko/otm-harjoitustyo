@@ -32,7 +32,7 @@ public class SudokuGrid {
                             return;
                         }
                         if (event.getText().matches("1|2|3|4|5|6|7|8|9")) {
-                            button.insertValueAsButtonText(event.getText());
+                            button.insertStringValueAsButtonText(event.getText());
                         }
                         if (event.getCode() == KeyCode.BACK_SPACE) {
                             button.setText("");

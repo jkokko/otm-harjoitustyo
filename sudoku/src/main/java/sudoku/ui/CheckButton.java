@@ -1,4 +1,3 @@
-
 package sudoku.ui;
 
 import javafx.event.EventHandler;
@@ -7,20 +6,20 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import sudoku.domain.Solver;
 
+public class CheckButton extends Button {
 
-public class CheckButton {
-    
     private static Solver solver = new Solver();
-    
-    public static Button getCheckButton(GridPane sudokuGrid) {
-        Button check = new Button("check");
-        check.setOnMousePressed(new EventHandler<MouseEvent>() {
+    private GridPane sudoku;
+
+    public CheckButton(GridPane sudoku) {
+        setText("Check!");
+        this.sudoku = sudoku;
+        setOnMousePressed(new EventHandler<MouseEvent>() {
             int[][] currentGrid = new int[9][9];
             int x = 0;
             int y = 0;
-
             public void handle(MouseEvent event) {
-                sudokuGrid.getChildren().stream().forEach(b -> {
+                getSudoku().getChildren().stream().forEach(b -> {
                     if (x == 9) {
                         x = 0;
                         y = y + 1;
@@ -29,10 +28,10 @@ public class CheckButton {
                     currentGrid[y][x] = button.getValue();
                     x++;
                 });
-                
+
                 x = 0;
                 y = 0;
-                
+
                 if (solver.completed(currentGrid)) {
                     System.out.println("ratkaistu!");
                 } else {
@@ -40,8 +39,14 @@ public class CheckButton {
                 }
             }
         });
-        
-        return check;
+    }
+
+    public GridPane getSudoku() {
+        return sudoku;
     }
     
+    public void setSudoku(GridPane sudoku) {
+        this.sudoku = sudoku;
+    }
+
 }

@@ -38,7 +38,7 @@ public class Generator {
         if (sudokuGrid[x][y] != 0) {
             return fillGrid(x + 1, y);
         }
- 
+        
         for (int i = 0; i < 9; i++) {
             sudokuGrid[x][y] = cellValues[x][y].get(i);
             if (check(x, y, sudokuGrid) == true) {

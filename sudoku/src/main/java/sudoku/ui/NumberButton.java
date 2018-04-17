@@ -11,10 +11,10 @@ public class NumberButton extends Button {
     public NumberButton(Integer value) {
         givenCellValue = false;
         this.value = value;
-        insertValueAsButtonText(value.toString());
+        insertStringValueAsButtonText(value.toString());
     }
 
-    public void insertValueAsButtonText(String value) {
+    public void insertStringValueAsButtonText(String value) {
         int valueAsInt = Integer.parseInt(value);
         if (getGivenCellValue() == true) {
             return;
@@ -27,10 +27,22 @@ public class NumberButton extends Button {
         }
     }
     
-    public void clearValue() {
+    public void insertIntValueAsButtonText(Integer value) {
+        this.value = value;
+        setText(Integer.toString(value));
+    }
+    
+    public void clearNonGivenValue() {
         if (givenCellValue == false) {
             this.setText("");
+            this.value = 0;
         }
+    }
+    
+    public void clearValue() {
+        this.setText("");
+        this.value = 0;
+        this.givenCellValue = false;
     }
 
     public int getValue() {

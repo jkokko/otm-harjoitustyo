@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE suppressions PUBLIC
+    "-//Puppy Crawl//DTD Suppressions 1.1//EN"
+    "http://www.puppycrawl.com/dtds/suppressions_1_1.dtd">
+
+<suppressions>
+    <suppress files="sudoku.ui.CheckButton.java" checks="[a-zA-Z0-9]*"/>
+    <suppress files="sudoku.ui.ClearButton.java" checks="[a-zA-Z0-9]*"/>
+    <suppress files="sudoku.ui.NewPuzzleButton.java" checks="[a-zA-Z0-9]*"/>
+    <suppress files="sudoku.ui.NumberButton.java" checks="[a-zA-Z0-9]*"/>
+    <suppress files="sudoku.ui.SudokuGrid.java" checks="[a-zA-Z0-9]*"/>
+    <suppress files="sudoku.ui.Timer.java" checks="[a-zA-Z0-9]*"/>
+    <suppress files="sudoku.ui.UserInterface.java" checks="[a-zA-Z0-9]*"/>
+</suppressions>
