@@ -26,6 +26,12 @@ public class NumberButton extends Button {
             this.value = valueAsInt;
         }
     }
+    
+    public void clearValue() {
+        if (givenCellValue == false) {
+            this.setText("");
+        }
+    }
 
     public int getValue() {
         return value;
