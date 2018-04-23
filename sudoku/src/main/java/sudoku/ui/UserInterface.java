@@ -3,7 +3,6 @@ package sudoku.ui;
 
 import javafx.animation.AnimationTimer;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
@@ -26,12 +25,14 @@ public class UserInterface {
         //check button
         CheckButton checkButton = new CheckButton(sudokuGrid);
         
-        //new game button
-        NewPuzzleButton newPuzzleButton = new NewPuzzleButton(window, checkButton, clearButton);
-        
         //Timer
         Label timeLabel = new Label();
-        AnimationTimer timeUpdater = Timer.timeUpdater(timeLabel);
+        Timer timer = new Timer(timeLabel);
+        
+        //new game button
+        NewPuzzleButton newPuzzleButton = new NewPuzzleButton(window, checkButton, clearButton,
+                                            timer);
+        
         
         
         vboxi.getChildren().add(timeLabel);
@@ -45,7 +46,7 @@ public class UserInterface {
         Scene scene = new Scene(window);
         stage.setTitle("Sudoku");
         stage.setScene(scene);
-        timeUpdater.start();
+        timer.start();
         return stage;
     }
     

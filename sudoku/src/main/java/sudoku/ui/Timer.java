@@ -3,38 +3,42 @@ package sudoku.ui;
 import javafx.animation.AnimationTimer;
 import javafx.scene.control.Label;
 
+public class Timer extends AnimationTimer {
 
-public class Timer {
+    private String seconds;
+    private String minutes;
+    private long elapsedSeconds;
+    private long startTime;
+    private Label timeLabel;
 
-    
-    public static AnimationTimer timeUpdater(Label timeLabel) {
-        long startTime = System.currentTimeMillis();
-        AnimationTimer timeUpdater = new AnimationTimer() {
-            String minutes = "";
-            String seconds = "";
-            @Override
-            public void handle(long now) {
-                long elapsedSeconds = ((System.currentTimeMillis() - startTime) / 1000);
-                long elapsedMinutes = Math.floorDiv(elapsedSeconds, 60);
-                
-                if (elapsedMinutes > 9) {
-                    minutes = "" + elapsedMinutes;
-                } else {
-                    minutes = "0" + elapsedMinutes;
-                }
-                
-                if (elapsedSeconds % 60 > 9) {
-                    seconds = "" + elapsedSeconds % 60;
-                } else {
-                    seconds = "0" + elapsedSeconds % 60;
-                }
-                
-                String time = minutes + ":" + seconds;
-
-                timeLabel.setText(time);
-            }
-        };
-        return timeUpdater;
+    public Timer(Label label) {
+        this.timeLabel = label;
+        this.startTime = System.currentTimeMillis();
     }
-}
 
+    public void handle(long now) {
+        elapsedSeconds = ((System.currentTimeMillis() - startTime) / 1000);
+        long elapsedMinutes = Math.floorDiv(elapsedSeconds, 60);
+
+        if (elapsedMinutes > 9) {
+            minutes = "" + elapsedMinutes;
+        } else {
+            minutes = "0" + elapsedMinutes;
+        }
+
+        if (elapsedSeconds % 60 > 9) {
+            seconds = "" + elapsedSeconds % 60;
+        } else {
+            seconds = "0" + elapsedSeconds % 60;
+        }
+
+        String time = minutes + ":" + seconds;
+
+        timeLabel.setText(time);
+    }
+    
+    public void setStartTime() {
+        this.startTime = System.currentTimeMillis();
+    }
+    
+}
