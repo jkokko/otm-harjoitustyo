@@ -1,6 +1,6 @@
-#Arkkitehtuurikuvaus
+# Arkkitehtuurikuvaus
 
-##Luokkarakenne
+## Luokkarakenne
 Pakkaus UI k‰ytt‰‰ sovelluslogiikan sis‰lt‰v‰n pakkauksen domain sis‰lt‰vi‰ luokkia Generator, Solver ja DatabaseService.
 DatabaseService puolestaan on riippuvainen UserDao rajapinnan toteuttavasta luokasta.
 RedisUserDao on ainoa t‰h‰n koodattu luokka joka sen toteuttaa, ja se k‰ytt‰‰ avain-arvo
