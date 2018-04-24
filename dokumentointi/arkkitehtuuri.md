@@ -10,5 +10,6 @@ tietokantapalvelua Redis. Tietokantaan otetaan yhteys kirjastolla "Jedis".
 
 ## Toiminnallisuutta
 
+Tässä sekvenssikaavio siitä, kun käyttäjä painaa "New Puzzle" nappulaa.
 ![New Puzzle nappulan 
 painaminen](https://github.com/jkokko/otm-harjoitustyo/blob/master/dokumentointi/newpuzzlesekvenssikaavio.png)

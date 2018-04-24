@@ -11,6 +11,8 @@ Käyttäjiin liittyvää koodia ei vielä ole. Ainoastaan tyhjiä luokkia.
 
 [Vaatimusmäärittely](https://github.com/jkokko/otm-harjoitustyo/blob/master/dokumentointi/Vaatimusmaarittely.md)
 
+[Arkkitehtuuri](https://github.com/jkokko/otm-harjoitustyo/blob/master/dokumentointi/arkkitehtuuri.md)
+
 ## Komentorivitoiminnot
 
 ### Testaus
