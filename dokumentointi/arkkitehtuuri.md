@@ -7,3 +7,8 @@ RedisUserDao on ainoa t‰h‰n koodattu luokka joka sen toteuttaa, ja se k‰ytt‰‰ av
 tietokantapalvelua Redis. Tietokantaan otetaan yhteys kirjastolla "Jedis".
 
 ![Luokkakaavio](https://github.com/jkokko/otm-harjoitustyo/blob/master/dokumentointi/luokkakaavio.png)
+
+## Toiminnallisuutta
+
+![New Puzzle nappulan 
+painaminen](https://github.com/jkokko/otm-harjoitustyo/blob/master/dokumentointi/newpuzzlesekvenssikaavio.png)
