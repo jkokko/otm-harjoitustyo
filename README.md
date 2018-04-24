@@ -4,7 +4,7 @@ Tässä vaiheessa sovellus luo sudokutehtävän, mutta annettujen numeroiden mä
 
 Sudokuun voi täyttää numeroita numeronäppäimien avulla, ja backspacella voi poistaa numeron. Check nappula toimii, ja kertoo tekstinä onko annettu ratkaisu oikein. Myös Clear ja New Puzzle nappulat toimivat nyt.
 
-Käyttäjiin liittyvää koodia ei vielä ole. Ainoastaan tyhjiä luokkia.
+Käyttäjiin liittyvää koodia on vähän, mutta ei vielä varsinaista toiminnallisuutta.
 
 ## Dokumentaatio
 [Työaikakirjanpito](https://github.com/jkokko/otm-harjoitustyo/blob/master/dokumentointi/tyoaikakirjanpito.md)
