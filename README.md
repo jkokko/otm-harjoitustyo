@@ -10,3 +10,22 @@ Käyttäjiin liittyvää koodia ei vielä ole. Ainoastaan tyhjiä luokkia.
 [Työaikakirjanpito](https://github.com/jkokko/otm-harjoitustyo/blob/master/dokumentointi/tyoaikakirjanpito.md)
 
 [Vaatimusmäärittely](https://github.com/jkokko/otm-harjoitustyo/blob/master/dokumentointi/Vaatimusmaarittely.md)
+
+## Komentorivitoiminnot
+
+### Testaus
+`<mvn test>`
+
+### Testikattavuusraportti
+
+`<mvn jacoco:report>`
+raportti löytyy tiedostosta targer/site/jacoco/index.html
+
+### Jarin generointi
+`<mvn package>`
+luo suoritettavan tiedoston target/sudoku-1.0-SNAPSHOT.jar
+
+### Checkstyle
+voit tarkistaa checkstyle raportin ajamalla
+`<mvn jxr:jxr checkstyle:checkstyle>`
+ja avaamalla tiedoston target/site/checkstyle.html
