@@ -1,18 +1,24 @@
 
 package sudoku.ui;
 
-import javafx.animation.AnimationTimer;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import sudoku.dao.RedisUserDao;
+import sudoku.dao.UserDao;
+import sudoku.domain.DatabaseService;
+import sudoku.domain.User;
 
 
 public class UserInterface {
-    
+      
     public static Stage getSudoku() {
+        UserDao userDao = new RedisUserDao();
+        DatabaseService db = new DatabaseService(userDao);
+        db.logIn(new User("jussa4"));
         Stage stage = new Stage();
         BorderPane window = new BorderPane();
         GridPane sudokuGrid = SudokuGrid.createPuzzle();
@@ -22,12 +28,13 @@ public class UserInterface {
         //clear button
         ClearButton clearButton = new ClearButton(sudokuGrid);
         
-        //check button
-        CheckButton checkButton = new CheckButton(sudokuGrid);
-        
         //Timer
         Label timeLabel = new Label();
         Timer timer = new Timer(timeLabel);
+        
+        //check button
+        CheckButton checkButton = new CheckButton(sudokuGrid, stage, db, timer);
+        
         
         //new game button
         NewPuzzleButton newPuzzleButton = new NewPuzzleButton(window, checkButton, clearButton,

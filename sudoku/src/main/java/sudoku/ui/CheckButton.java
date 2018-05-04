@@ -1,9 +1,12 @@
 package sudoku.ui;
 
 import javafx.event.EventHandler;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
+import javafx.stage.Stage;
+import sudoku.domain.DatabaseService;
 import sudoku.domain.Solver;
 
 public class CheckButton extends Button {
@@ -11,7 +14,7 @@ public class CheckButton extends Button {
     private static Solver solver = new Solver();
     private GridPane sudoku;
 
-    public CheckButton(GridPane sudoku) {
+    public CheckButton(GridPane sudoku, Stage stage, DatabaseService db, Timer timer) {
         setText("Check!");
         this.sudoku = sudoku;
         setOnMousePressed(new EventHandler<MouseEvent>() {
@@ -32,7 +35,15 @@ public class CheckButton extends Button {
                 x = 0;
                 y = 0;
 
-                if (solver.completed(currentGrid)) {
+                if (solver.testiCompleted(currentGrid)) {
+                    try {
+                        db.createNewTime(timer.getElapsedSeconds());
+                    } catch (Exception e) {
+                        
+                    }
+                    ScoreWindow scoreWindow = new ScoreWindow(db);
+                    Scene scoreScene = new Scene(scoreWindow);
+                    stage.setScene(scoreScene);
                     System.out.println("ratkaistu!");
                 } else {
                     System.out.println("ei ratkaistu!");

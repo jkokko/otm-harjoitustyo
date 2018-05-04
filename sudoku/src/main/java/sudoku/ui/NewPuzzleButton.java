@@ -23,5 +23,5 @@ public class NewPuzzleButton extends Button {
                 window.setLeft(newSudoku);
             }
         });
-    }
+     }
 }

@@ -37,6 +37,14 @@ public class Timer extends AnimationTimer {
         timeLabel.setText(time);
     }
     
+    public String getText() {
+        return this.timeLabel.getText();
+    }
+    
+    public long getElapsedSeconds() {
+        return elapsedSeconds;
+    }
+    
     public void setStartTime() {
         this.startTime = System.currentTimeMillis();
     }

@@ -203,5 +203,9 @@ public class Solver {
         }
         return true;
     }
+    
+    public boolean testiCompleted(int[][] sudoku) {
+        return true;
+    }
 
 }
