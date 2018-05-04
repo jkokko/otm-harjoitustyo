@@ -1,9 +1,13 @@
 package sudoku.dao;
 
+import static java.lang.Integer.max;
+import static java.lang.Integer.min;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
+import java.util.stream.Collectors;
 import sudoku.domain.User;
 import redis.clients.jedis.Jedis;
+import redis.clients.jedis.Tuple;
 
 public class RedisUserDao implements UserDao {
 
@@ -43,18 +47,22 @@ public class RedisUserDao implements UserDao {
         return minutes + ":" + seconds;
     }
 
-    public User findByUsername(String username) {
-        return null;
-    }
-
     public List<String> getUsersBestTimes(User user) {
         //returns ten best times at key user.getUsername()
-        Set bestTimes = jedis.zrangeByScoreWithScores(user.getUsername(), 0, 10);
-        
-        return null;
+        ArrayList<String> bestTimes = jedis.zrevrange(user.getUsername(), 0, 10).
+                stream().collect(Collectors.toCollection(ArrayList::new));
+       
+        return bestTimes;
     }
 
     public List<String> getAllTimeBestTimes() {
-        return null;
+        ArrayList<String> bestTimes = new ArrayList<>();
+        jedis.zrevrangeByScoreWithScores("allTimeBest", 0, 10).
+                stream().forEach(tuple -> {
+                    bestTimes.add(tuple.getElement() + ": " + 
+                            timeAsString((long) tuple.getScore()));
+                });
+        
+        return bestTimes;
     }
 }

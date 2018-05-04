@@ -13,6 +13,12 @@ public class Generator {
     private static ArrayList<Integer>[][] cellValues = new ArrayList[9][9];
     private static Solver solver = new Solver();
     
+    
+    /**
+     * Creates a sudoku grid that is valid and filled.
+     * 
+     * @return a 9x9 int[][] with a valid non-zero number in every slot 
+     */
     public int[][] createValidFilledGrid() {
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 9; j++) {
@@ -28,7 +34,8 @@ public class Generator {
         return sudokuGrid;
     }
     
-    public boolean fillGrid(int x, int y) {
+    
+    private boolean fillGrid(int x, int y) {
         if (y == 9) {
             return true;
         }
@@ -51,6 +58,10 @@ public class Generator {
         return false;
     }
     
+    /**
+     * Creates a sudoku puzzle.
+     * @return a 9x9 int[][] sudoku with a unique solution.
+     */
     public int[][] createValidGrid() {
         createValidFilledGrid();
         int[] lastRemovedValue = removeCellValue();
@@ -70,7 +81,7 @@ public class Generator {
         return sudokuGrid;
     }
     
-    public int[] removeCellValue() {
+    private int[] removeCellValue() {
         Random cellPicker = new Random();
         int row = cellPicker.nextInt(9);
         int col = cellPicker.nextInt(9);
@@ -79,6 +90,12 @@ public class Generator {
         return new int[] {row, col, arvo};
     }
     
+    /**
+     * Creates two copies of given int[][]
+     * @param sudoku int[][] to be copied
+     * @return int[][][] with int[0][][] containing the first copy, and int[1][][]
+     * containing second copy
+     */
     public int[][][] copiesOfGrid(int[][] sudoku) {
         int length = sudoku[0].length;
         int[][] firstCopy = new int[length][length];
@@ -95,7 +112,7 @@ public class Generator {
         return copies;
     }
     
-    public boolean uniquelySolvable(int[][] sudoku) {
+    private boolean uniquelySolvable(int[][] sudoku) {
         int[][][] copies = copiesOfGrid(sudoku);
         int[][] firstSolution = solver.solve(copies[0]);
         int[][] secondSolution = solver.solveInReverseValueOrder(copies[1]);
@@ -106,6 +123,12 @@ public class Generator {
         }
     }
     
+    /**
+     * Checks if two int[][]s are identical.
+     * @param firstSolution first int[][]
+     * @param secondSolution second int[][]
+     * @return true if identical, else false
+     */
     public boolean same(int[][] firstSolution, int[][] secondSolution) {
         for (int i = 0; i < firstSolution[0].length; i++) {
             for (int j = 0; j < firstSolution[0].length; j++) {
@@ -119,7 +142,7 @@ public class Generator {
         return true;
     }
     
-    public boolean check(int x, int y, int[][] sudoku) {
+    private boolean check(int x, int y, int[][] sudoku) {
         return solver.check(x, y, sudoku);
     }
     

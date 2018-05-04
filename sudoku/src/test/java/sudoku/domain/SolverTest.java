@@ -53,15 +53,15 @@ public class SolverTest {
     public void checkBoxReturnsTrueIfBoxIsStillValid() {
         //simulating the situation where we have just added a new value to
         //sudoku[1][1] which is 5
-        assertEquals(true, solver.checkBox(2, 2, 1, 1, correct));
+        assertEquals(true, solver.checkBox(1, 1, correct));
     }
     
     @Test
     public void checkBoxReturnsFalseIfBoxContainsTheSameValue() {
         //simulating the situation where we have just added a new value to
-        //sudoku[1][1] which is 5
+        //sudoku[1][1] which is 5, and also sudoku[2][0] is 5.
         correct[2][0] = 5;
-        assertEquals(false, solver.checkBox(2, 2, 1, 1, correct));
+        assertEquals(false, solver.checkBox(1, 1, correct));
     }
 
     
