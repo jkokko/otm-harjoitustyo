@@ -11,3 +11,5 @@ päivä | aika | aika yht. | mitä tein
 17.4 | 6 | 26 | Uusien luokkien teko, vanhan koodin pilkkomista metodeihin, muutama uusi toiminnallisuus, checkstylen käyttöönotto, muutama uusi testi
 23.4 | 7 | 33 | aika kului lähinnä githubin kanssa taisteluun :D hiukan koodia liittyen tietokantaan
 24.4 | 4 | 37 | ei uutta varsinaista koodia vaan repon hiontaa kuten arkkitehtuuri.md:n luonti ja jarin luonti
+4.5  | 3 | 40 | Redis tietokannan koodia
+6.5  | 3 | 43 | Uusia UI elementtejä, käyttäjän kirjautumisen toiminnallisuutta
