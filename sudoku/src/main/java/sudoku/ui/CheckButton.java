@@ -9,6 +9,10 @@ import javafx.stage.Stage;
 import sudoku.domain.DatabaseService;
 import sudoku.domain.Solver;
 
+/**
+ * Clicking this button checks if the sudoku is solved. If it is solved,
+ * changes the scene to the score window, else creates a new IncorrectNotifier.
+ */ 
 public class CheckButton extends Button {
 
     private static Solver solver = new Solver();
@@ -41,12 +45,13 @@ public class CheckButton extends Button {
                     } catch (Exception e) {
                         
                     }
-                    ScoreWindow scoreWindow = new ScoreWindow(db);
+                    ScoreWindow scoreWindow = new ScoreWindow(stage, db);
                     Scene scoreScene = new Scene(scoreWindow);
                     stage.setScene(scoreScene);
                     System.out.println("ratkaistu!");
                 } else {
                     System.out.println("ei ratkaistu!");
+                    IncorrectNotifier incorrect = new IncorrectNotifier();
                 }
             }
         });

@@ -8,6 +8,10 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.GridPane;
 import sudoku.domain.Generator;
 
+/**
+ * Has only one static method, createPuzzle(), which returns a GridPane
+ * full of NumberButtons that make up for a valid sudoku puzzle.
+ */
 public class SudokuGrid {
     
     public static GridPane createPuzzle() {

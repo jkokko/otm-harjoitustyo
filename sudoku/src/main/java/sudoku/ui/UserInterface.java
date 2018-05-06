@@ -3,23 +3,43 @@ package sudoku.ui;
 
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import sudoku.dao.RedisUserDao;
 import sudoku.dao.UserDao;
 import sudoku.domain.DatabaseService;
 import sudoku.domain.User;
 
-
+/**
+ * Has two static methods to return either login screen or the sudoku
+ * puzzle view.
+ */
 public class UserInterface {
+    
+    public static Scene getLogInScreen(DatabaseService db, Stage stage) {
+        
+        BorderPane window = new BorderPane();
+        
+        VBox vbox = new VBox();
+        vbox.getChildren().add(new Label("Username:"));
+        
+        TextField usernameField = new TextField();
+        vbox.getChildren().add(usernameField);
+        
+        LoginButton loginButton = new LoginButton(stage, db, usernameField);
+        vbox.getChildren().add(loginButton);
+        window.setCenter(vbox);
+        Scene scene = new Scene(window);
+        
+        return scene;
+    }
       
-    public static Stage getSudoku() {
-        UserDao userDao = new RedisUserDao();
-        DatabaseService db = new DatabaseService(userDao);
+    public static Scene getSudoku(DatabaseService db, Stage stage) {
+        
+        
         db.logIn(new User("jussa4"));
-        Stage stage = new Stage();
         BorderPane window = new BorderPane();
         GridPane sudokuGrid = SudokuGrid.createPuzzle();
         VBox vboxi = new VBox();
@@ -40,21 +60,22 @@ public class UserInterface {
         NewPuzzleButton newPuzzleButton = new NewPuzzleButton(window, checkButton, clearButton,
                                             timer);
         
+        //change user button
+        ChangeUserButton changeUser = new ChangeUserButton(stage, db);
         
         
         vboxi.getChildren().add(timeLabel);
         vboxi.getChildren().add(clearButton);
         vboxi.getChildren().add(checkButton);
         vboxi.getChildren().add(newPuzzleButton);
+        vboxi.getChildren().add(changeUser);
         
         window.setLeft(sudokuGrid);
         window.setRight(vboxi);
 
         Scene scene = new Scene(window);
-        stage.setTitle("Sudoku");
-        stage.setScene(scene);
         timer.start();
-        return stage;
+        return scene;
     }
     
 }

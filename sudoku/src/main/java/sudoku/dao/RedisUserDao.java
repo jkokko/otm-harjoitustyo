@@ -46,23 +46,24 @@ public class RedisUserDao implements UserDao {
 
         return minutes + ":" + seconds;
     }
-
+    
+    @Override
     public List<String> getUsersBestTimes(User user) {
         //returns ten best times at key user.getUsername()
-        ArrayList<String> bestTimes = jedis.zrevrange(user.getUsername(), 0, 10).
+        ArrayList<String> bestTimes = jedis.zrange(user.getUsername(), 0, 1000).
                 stream().collect(Collectors.toCollection(ArrayList::new));
        
         return bestTimes;
     }
-
+    
+    @Override
     public List<String> getAllTimeBestTimes() {
         ArrayList<String> bestTimes = new ArrayList<>();
-        jedis.zrevrangeByScoreWithScores("allTimeBest", 0, 10).
+        jedis.zrangeWithScores("allTimeBest", 0, 1000).
                 stream().forEach(tuple -> {
                     bestTimes.add(tuple.getElement() + ": " + 
                             timeAsString((long) tuple.getScore()));
                 });
-        
         return bestTimes;
     }
 }

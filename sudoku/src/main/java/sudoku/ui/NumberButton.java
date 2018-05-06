@@ -3,6 +3,12 @@ package sudoku.ui;
 import javafx.scene.control.Button;
 
 
+/**
+ * The buttons that make up for the sudoku. Each button has the attribute
+ * "givenCellValue", which is false by default and set true if in the given
+ * sudoku puzzle the number at this buttons coordinate did not equal zero.
+ * givenCellValue = true protects the button's value from changing.
+ */
 public class NumberButton extends Button {
     
     private boolean givenCellValue;

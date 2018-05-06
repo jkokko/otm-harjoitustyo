@@ -23,6 +23,10 @@ public class DatabaseService {
     public void logOut() {
         this.loggedIn = null;
     }
+
+    public User getUser() {
+        return loggedIn;
+    }
     
     public void createNewTime(long time) throws Exception {
         this.userDao.createNewTime(loggedIn, time);

@@ -3,6 +3,13 @@ package sudoku.ui;
 import javafx.animation.AnimationTimer;
 import javafx.scene.control.Label;
 
+
+/**
+ * An extension of AnimationTimer, keeps track of the time that the sudoku
+ * puzzle has been active. Also useful for database purposes, as this class
+ * allows for easy fetching of the elapsed time.
+ * @author kuumotusmies
+ */
 public class Timer extends AnimationTimer {
 
     private String seconds;
