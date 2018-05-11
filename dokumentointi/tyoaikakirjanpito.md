@@ -13,3 +13,4 @@ päivä | aika | aika yht. | mitä tein
 24.4 | 4 | 37 | ei uutta varsinaista koodia vaan repon hiontaa kuten arkkitehtuuri.md:n luonti ja jarin luonti
 4.5  | 3 | 40 | Redis tietokannan koodia
 6.5  | 3 | 43 | Uusia UI elementtejä, käyttäjän kirjautumisen toiminnallisuutta
+11.5 | 2 | 45 | Tietokannan koodaamista, lähinnä bugien poistamista

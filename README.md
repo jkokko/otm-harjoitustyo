@@ -1,10 +1,9 @@
 # Sudoku
 
-Tässä vaiheessa sovellus luo sudokutehtävän, mutta annettujen numeroiden määrä vaihtelee, ja voi olla lähes tyhjä. Periaatteessa ohjelma tarkistaa, että onko annetulle sudokutehtävälle vain yksi uniikki ratkaisu, mutta toteutus on toistaiseksi vielä pielessä.
+Sovellus luo sudokutehtävän, jolle on vain yksi uniikki ratkaisu.
 
-Sudokuun voi täyttää numeroita numeronäppäimien avulla, ja backspacella voi poistaa numeron. Check nappula toimii, ja kertoo tekstinä onko annettu ratkaisu oikein. Myös Clear ja New Puzzle nappulat toimivat nyt.
+Sovellus tallentaa parhaat ajat tietokantaan sisään kirjautuneen käyttäjän nimellä.
 
-Käyttäjiin liittyvää koodia on vähän, mutta ei vielä varsinaista toiminnallisuutta.
 
 ## Dokumentaatio
 [Työaikakirjanpito](https://github.com/jkokko/otm-harjoitustyo/blob/master/dokumentointi/tyoaikakirjanpito.md)
@@ -12,6 +11,9 @@ Käyttäjiin liittyvää koodia on vähän, mutta ei vielä varsinaista toiminna
 [Vaatimusmäärittely](https://github.com/jkokko/otm-harjoitustyo/blob/master/dokumentointi/Vaatimusmaarittely.md)
 
 [Arkkitehtuuri](https://github.com/jkokko/otm-harjoitustyo/blob/master/dokumentointi/arkkitehtuuri.md)
+
+[Käyttöohje](https://github.com/jkokko/otm-harjoitustyo/blob/master/dokumentointi/kayttoohje.md)
+
 
 ## Komentorivitoiminnot
 
