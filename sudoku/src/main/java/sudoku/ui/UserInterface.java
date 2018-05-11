@@ -39,7 +39,6 @@ public class UserInterface {
     public static Scene getSudoku(DatabaseService db, Stage stage) {
         
         
-        db.logIn(new User("jussa4"));
         BorderPane window = new BorderPane();
         GridPane sudokuGrid = SudokuGrid.createPuzzle();
         VBox vboxi = new VBox();
@@ -63,12 +62,16 @@ public class UserInterface {
         //change user button
         ChangeUserButton changeUser = new ChangeUserButton(stage, db);
         
+        //pass button for database testing purposes
+        PassButtonForDatabaseTesting pass = new PassButtonForDatabaseTesting(
+                sudokuGrid, stage, db, timer);
         
         vboxi.getChildren().add(timeLabel);
         vboxi.getChildren().add(clearButton);
         vboxi.getChildren().add(checkButton);
         vboxi.getChildren().add(newPuzzleButton);
         vboxi.getChildren().add(changeUser);
+        vboxi.getChildren().add(pass);
         
         window.setLeft(sudokuGrid);
         window.setRight(vboxi);

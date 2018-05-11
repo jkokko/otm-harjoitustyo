@@ -18,11 +18,11 @@ public class ScoreWindow extends BorderPane {
     
     public ScoreWindow(Stage stage, DatabaseService db) {
         this.db = db;
-        setPadding(new Insets(10, 10, 10, 10));
+        setPadding(new Insets(10, 60, 10, 10));
         setPrefSize(400, 400);
         
-        
-        Label correct = new Label("Correct!\nBest times:");
+        Label correct = new Label("Correct!\n\n\nBest times:"
+        + "\t\t\t\t\t\tPersonal best times:");
         setTop(correct);
         
         Label scoresLabel = new Label();
@@ -39,9 +39,9 @@ public class ScoreWindow extends BorderPane {
         StringBuilder usersScores = new StringBuilder();
         List<String> usersScoresList = db.getUsersBestTimes(db.getUser());
         usersScoresList.stream().forEach(time -> {
-            usersScores.append(time + "\n");
+            usersScores.append(db.getUser().toString() + ": " + time + "\n");
         });
-        usersScoresLabel.setText(scores.toString());
+        usersScoresLabel.setText(usersScores.toString());
         setRight(usersScoresLabel);
         
         NewPuzzleAfterScoresButton button = new NewPuzzleAfterScoresButton(stage, db);

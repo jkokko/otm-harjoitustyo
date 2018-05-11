@@ -8,6 +8,7 @@ import java.util.stream.Collectors;
 import sudoku.domain.User;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.Tuple;
+import redis.clients.jedis.params.sortedset.ZAddParams;
 
 public class RedisUserDao implements UserDao {
 
@@ -50,7 +51,7 @@ public class RedisUserDao implements UserDao {
     @Override
     public List<String> getUsersBestTimes(User user) {
         //returns ten best times at key user.getUsername()
-        ArrayList<String> bestTimes = jedis.zrange(user.getUsername(), 0, 1000).
+        ArrayList<String> bestTimes = jedis.zrange(user.getUsername(), 0, 10).
                 stream().collect(Collectors.toCollection(ArrayList::new));
        
         return bestTimes;
@@ -59,7 +60,7 @@ public class RedisUserDao implements UserDao {
     @Override
     public List<String> getAllTimeBestTimes() {
         ArrayList<String> bestTimes = new ArrayList<>();
-        jedis.zrangeWithScores("allTimeBest", 0, 1000).
+        jedis.zrangeWithScores("allTimeBest", 0, 10).
                 stream().forEach(tuple -> {
                     bestTimes.add(tuple.getElement() + ": " + 
                             timeAsString((long) tuple.getScore()));

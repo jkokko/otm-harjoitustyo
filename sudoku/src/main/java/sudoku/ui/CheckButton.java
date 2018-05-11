@@ -39,7 +39,7 @@ public class CheckButton extends Button {
                 x = 0;
                 y = 0;
 
-                if (solver.testiCompleted(currentGrid)) {
+                if (solver.completed(currentGrid)) {
                     try {
                         db.createNewTime(timer.getElapsedSeconds());
                     } catch (Exception e) {
@@ -48,9 +48,7 @@ public class CheckButton extends Button {
                     ScoreWindow scoreWindow = new ScoreWindow(stage, db);
                     Scene scoreScene = new Scene(scoreWindow);
                     stage.setScene(scoreScene);
-                    System.out.println("ratkaistu!");
                 } else {
-                    System.out.println("ei ratkaistu!");
                     IncorrectNotifier incorrect = new IncorrectNotifier();
                 }
             }
